@@ -1,9 +1,30 @@
-/* Table section */
+body, h1,h2,h3,h4,h5,h6 {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+  
+  .w3-row-padding img {
+    margin-bottom: 12px;
+  }
+  
+  .bgimg .container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
+  
+  /* Additional styles can be added below */
+  
+
+  /* Table section */
 
 .work-experience {
-    width: 75%;
+    width: 100%;
     border-collapse: collapse;
-    margin-left: 15%;
   }
   
   .work-experience th,
@@ -177,7 +198,6 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 22%;
     width: 120px;
     height: 4px;
     border-radius: 0 2px 2px 0;
@@ -235,3 +255,22 @@
         padding: 2rem 50px;
     }
 }
+
+/* CSS for Footer Icons*/
+
+.fa {
+    border-radius: 32%;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }

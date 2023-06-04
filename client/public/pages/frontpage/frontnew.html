@@ -1,33 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/frontnew.css">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills</title>
-    <link rel="stylesheet" href="/assets/css/frontpage.css">
-    <link rel="stylesheet" href="/assets/css/skills.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
 
 <body>
-    <header>
-		<nav>
-			<ul>
-				<li><a href="/frontpage">About</a></li>
-				<li><a href="/skills">Skills</a></li>
-                <li class="dropdown">
-                    <a href="/projects">Projects</a>
-                    <ul>
-                      <li><a href="#">Option 3</a></li>
-                    </ul>
-                  </li>
-				<li><a href="/contact">Contact</a></li>
-        <li><a href="/login">Login In</a></li>
-			</ul>
-		</nav>
-	</header>
+
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+  <div class="bgimg">
+    <img src="/assets/images/Youssef.jpg" alt="Portrait" style="width: 100%; height: 45.2rem;">
+
+  </div>
+</nav>
+
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:40%">
+
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+  <!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+    <h1 class="w3-jumbo"><b>Youssef Arenstorff</b></h1>
+    <p>Software Developer & Entrepreneur.</p>
+    <button class="w3-button w3-light-grey w3-padding-large w3-margin-top" onclick="openPDF('/assets/pdf/YoussefCV.pdf')">
+        <i class="fa fa-download"></i> Download Resume
+      </button>      
+  </header>
+
+
+  <!-- Portfolio Section -->
+  <div class="w3-padding-32 w3-content" id="portfolio">
+    <h2 class="w3-text-grey">My Portfolio</h2>
+    <hr class="w3-opacity">
+
+   
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-32" id="about">
+    <h2>About</h2>
+    <hr class="w3-opacity">
+    <p>Some text about me. Some text about me. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing
+      elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
 
     <div class="skills-header">
         <h1>Work Experience</h1>
@@ -213,17 +250,6 @@
                 <div class="skills-container-last">
 
 
-                    <div class="skills-box-other-skills">
-                        <div class="skills-title">
-                            <div class="skills-img">
-                                <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Azure-Light.svg"
-                                    alt="" class="skills-icons">
-                            </div>
-                            <h3>AZURE</h3>
-                        </div>
-                        <P> Lorem Lorem Lorem </P>
-                    </div>
-
 
                     <div class="skills-box-other-skills">
                         <div class="skills-title">
@@ -236,18 +262,6 @@
                         <P> Lorem Lorem Lorem </P>
                     </div>
 
-
-
-                    <div class="skills-box-other-skills">
-                        <div class="skills-title">
-                            <div class="skills-img">
-                                <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/JQuery.svg"
-                                    alt="" class="skills-icons">
-                            </div>
-                            <h3>JQUERY</h3>
-                        </div>
-                        <P> Lorem Lorem Lorem </P>
-                    </div>
 
                     <div class="skills-box-other-skills">
                         <div class="skills-title">
@@ -303,36 +317,103 @@
 
             </div>
 
-            <footer>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h3>About Me</h3>
-                            <p>Computer Science</p>
-                        </div>
-                        <div class="col-md-4">
-                            <h3>Contact Me</h3>
-                            <ul>
-                                <li><i class="fa fa-phone"></i> 27893425</li>
-                                <li><i class="fa fa-envelope"></i> arenstorffenterprise@gmail.com</li>
-                                <li><i class="fa fa-map-marker"></i> Copenhagen, Denmark</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <h3>Follow Me</h3>
-                            <ul class="fa">
-                                <li><a href="https://www.linkedin.com/in/youssef-arenstorff-a0985a220/"><i
-                                            class="fa fa-linkedin"></i> LinkedIn</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+    <h3 class="w3-padding-16">My Skills</h3>
+    <p class="w3-wide">Photography</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:95%">95%</div>
+    </div>
+    <p class="w3-wide">Web Design</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:85%">85%</div>
+    </div>
+    <p class="w3-wide">Photoshop</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:80%">80%</div>
+    </div><br>
 
-            <script src="/assets/js/skills.js"></script>
+    
 
+    <!-- Testimonials -->
+    <h3 class="w3-padding-24">Work Experience</h3>
+    <p><span class="w3-large w3-text-black w3-margin-right">Chandler Bing.</span> Web Designer.</p>
+    <p>Jane Doe is just awesome. I am so happy to have met her!</p><br>
+   
+   
+    <p><span class="w3-large w3-text-black w3-margin-right">Chris Fox.</span> CEO at Mighty Schools.</p>
+    <p>Jane Doe saved us from a web disaster.</p><br>
+    
+  
+    <p><span class="w3-large w3-text-black w3-margin-right">Rebecca Flex.</span> CEO at Company.</p>
+    <p>No one is better than Jane Doe.</p><br>
+    
+    
+  <!-- End About Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-32 w3-content w3-text-grey" id="contact" style="margin-bottom:64px">
+    <h2>Contact Me</h2>
+    <hr class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Copenhagen, Denmark</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +45 27893425</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: arenstorffenterprise@gmail.com</p>
+    </div>
+    
+   
+   
+    <!-- Image of location/map -->
+    
+   
+    <p>Lets get in touch. Send me a message:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>  
+  
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin:-24px">
+   
+        <a href="https://www.linkedin.com/in/youssef-arenstorff-a0985a220/"> <i class="fa fa-linkedin"></i> </a>
+      
+
+  </footer>
+ 
+  
+  
+<!-- END PAGE CONTENT -->
+</div>
+
+<script>
+// Open and close sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "60%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+function openPDF(filePath) {
+  window.open(filePath, '_blank');
+}
+
+</script>
+
+<script src="/assets/js/skills.js"></script>
+<script src="/assets/pdf/file.js" defer></script>
 
 
 </body>
-
 </html>

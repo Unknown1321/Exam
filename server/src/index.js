@@ -5,6 +5,7 @@ import http from 'http';
 import { Server } from 'socket.io';
 import { fileURLToPath } from 'url';
 import path from 'path';
+import cors from 'cors';
 
 dotenv.config();
 
@@ -36,6 +37,9 @@ connection.connect((err) => {
 
 // Set up the static files serving from the public directory
 app.use(express.static(path.join(__dirname, '../client/public')));
+
+// Enable CORS
+app.use(cors());
 
 // Define a route to serve the skills.html file
 app.get('/skills', (req, res) => {

@@ -1,81 +1,6 @@
 import express from "express";
 import { io } from 'socket.io-client';
 import path from "path";
-import axios from 'axios';
-import fetch from 'node-fetch';
-import { JSDOM } from 'jsdom';
-
-
-// Function to load page content based on the URL
-function loadPageContent(url) {
-  // Create a virtual DOM environment using jsdom
-  const dom = new JSDOM('<!DOCTYPE html><html><body></body></html>');
-  const document = dom.window.document;
-  const contentDiv = document.getElementById('content');
-
-  // Remove the existing content
-  contentDiv.innerHTML = '';
-
-  // Load the content based on the URL
-  fetch(url)
-    .then(response => response.text())
-    .then(html => {
-      // Set the loaded HTML as the content of the #content div
-      contentDiv.innerHTML = html;
-
-      // Run any additional JavaScript code specific to the loaded page
-      if (url === '/frontpage') {
-        // Code specific to the frontpage.html
-        // ...
-      } else if (url === '/contact') {
-        // Code specific to the contact.html
-        // ...
-      } else if (url === '/skills') {
-        // Code specific to the skills.html
-        fetchWorkExperienceData(); // Fetch skills data and populate the table
-      }
-      // Add more conditions for other pages as needed
-    })
-    .catch(error => {
-      console.error('Error loading page content:', error);
-    });
-}
-
-// Fetch skills data from the API and populate the table
-function fetchWorkExperienceData() {
-    fetch('/api/skills')
-      .then(response => response.json())
-      .then(skills => {
-        const table = document.querySelector('.work-experience');
-        const tbody = table.querySelector('#work-experience');
-  
-        // Clear the existing table rows
-        tbody.innerHTML = '';
-  
-        // Create a new row for each skill and populate the cells
-        skills.forEach(skill => {
-          const row = document.createElement('tr');
-  
-          const nameCell = document.createElement('td');
-          nameCell.textContent = skill.name;
-          row.appendChild(nameCell);
-  
-          const dateCell = document.createElement('td');
-          dateCell.textContent = skill.date;
-          row.appendChild(dateCell);
-  
-          const descriptionCell = document.createElement('td');
-          descriptionCell.textContent = skill.description;
-          row.appendChild(descriptionCell);
-  
-          tbody.appendChild(row);
-        });
-      })
-      .catch(error => {
-        console.error('Error fetching skills data:', error);
-      });
-  }
-  
 
 const app = express();
 const socket = io('http://localhost:3000'); // Replace with your server URL
@@ -87,6 +12,10 @@ app.use(express.static("public"));
 /* My Frontpage Page */
 app.get("/frontpage", (req, res) => {
   res.sendFile(path.resolve("public/pages/frontpage/frontpage.html"));
+});
+
+app.get("/frontpagenew", (req, res) => {
+  res.sendFile(path.resolve("public/pages/frontpage/frontnew.html"));
 });
 
 /* My Contact Page */
