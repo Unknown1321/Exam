@@ -1,9 +1,8 @@
 /* Table section */
 
 .work-experience {
-    width: 75%;
+    width: 100%;
     border-collapse: collapse;
-    margin-left: 15%;
   }
   
   .work-experience th,
@@ -53,6 +52,9 @@
 
 .skills-section {
     padding-top: 20px;
+    position: relative;
+    z-index: 1;
+    width: 96%;
 }
 
 .skills-header {
@@ -81,7 +83,6 @@
     text-align: center;
     grid-gap: 1rem;
     padding: 1rem 80px;
-    font-size: 1.2rem;
 }
 
 .skills-container-last {
@@ -177,11 +178,15 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 22%;
+    left: 0;
     width: 120px;
     height: 4px;
     border-radius: 0 2px 2px 0;
     background-color: #2ecc71;
+}
+
+.skills-last-extra-width{
+    margin-left: 12%;
 }
 
 /* CSS For Skills Icons*/

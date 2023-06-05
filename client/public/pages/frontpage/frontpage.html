@@ -1,69 +1,420 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>My Portfolio</title>
-	<link rel="stylesheet" href="/assets/css/frontpage.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+<title>Youssef Arenstorff</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/assets/css/frontpage.css">
+<link rel="stylesheet" href="/assets/css/skills.css">
+
 
 <body>
-  <header>
-		<nav>
-			<ul>
-				<li><a href="/frontpage">About</a></li>
-				<li><a href="/skills">Skills</a></li>
-                <li class="dropdown">
-                    <a href="/projects">Projects</a>
-                    <ul>
-                      <li><a href="/mandatory1">Mandatory 1</a></li>
-                      <li><a href="/mandatory2">Mandatory 2</a></li>
-                      <li><a href="#">Option 3</a></li>
-                    </ul>
-                  </li>
-				<li><a href="/contact">Contact</a></li>
-        <li><a href="/login">Login In</a></li>
-			</ul>
-		</nav>
-	</header>
 
-	<main>
+<!-- Sidebar with image -->
+<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:35%">
+  <div class="bgimg">
+    <img src="/assets/images/YoussefSort.jpg" alt="Portrait" style="width: 100%; height: 49.7rem;">
 
-    <div class="portrait">
-      <img src="/assets/images/YoussefCut.jpg" alt="Portrait">
-        <div class="frontpage-text">
-          <h1>Welcome to my portfolio!</h1>
-			    <p>My name is Youssef and I'm studying computer science!.</p>
-        </div>
+  </div>
+</nav>
+
+<!-- Hidden Sidebar (reveals when clicked on menu icon)-->
+<nav class="w3-sidebar w3-black w3-animate-right w3-xxlarge" style="display:none;padding-top:150px;right:0;z-index:2" id="mySidebar">
+  <a href="javascript:void(0)" onclick="closeNav()" class="w3-button w3-black w3-xxxlarge w3-display-topright" style="padding:0 12px;">
+    <i class="fa fa-remove"></i>
+  </a>
+  <div class="w3-bar-block w3-center">
+    <a href="#" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Home</a>
+    <a href="#portfolio" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Portfolio</a>
+    <a href="#about" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">About</a>
+    <a href="#work" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Work Experience</a>
+    <a href="#skills" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Software Skills</a>
+    <a href="#otherSkills" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Acquired Skills</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-text-grey w3-hover-black" onclick="closeNav()">Contact</a>
+  </div>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main w3-padding-large" style="margin-left:35%">
+    <div class="secret-login"><a href="/login">l</a></div>
+    
+
+  <!-- Menu icon to open sidebar -->
+  <span class="w3-button w3-top w3-white w3-xxlarge w3-text-grey w3-hover-text-black" style="width:auto;right:0;" onclick="openNav()"><i class="fa fa-bars"></i></span>
+
+  <!-- Header -->
+  <header class="w3-container w3-center" style="padding:128px 16px" id="home">
+    <h1 class="w3-jumbo"><b>Youssef Arenstorff</b></h1>
+    <p>Software Developer & Entrepreneur.</p>
+    <button class="button-download-resume" onclick="openPDF('/assets/pdf/YoussefCV.pdf')">
+        <i class="fa fa-download"></i> Download Resume
+      </button>      
+  </header>
+
+
+  <!-- Portfolio Section -->
+  <div class="w3-padding-32 w3-content" id="portfolio">
+    <h2 class="w3-text">My Portfolio</h2>
+    <p> Scroll down and learn more about me, my skills as a software devoloper & general work experience.
+    </p><br>
+    <p>Feel free to use the navbar in the right corner.</p>
+    <hr class="w3-opacity">
+
+   
+  <!-- End Portfolio Section -->
+  </div>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-padding-32" id="about">
+    <h2>About</h2>
+    <hr class="w3-opacity">
+    <p>I am a new father, which is probably my most important title going forward, but regardless, since a young age I have always been responsible both in the workplace and outside of it. I have always had to learn things on my own since I was a young boy, which has made me incredibly quick to learn.
+        I can interact with all kinds of people, as I have both diplomatic skills and a good understanding of others and their needs. This is why I have always been given a leadership role because I am able to get the job done while also making sure that everyone on my team, or those for whom I am responsible, is heard.
+        
+    </p>
+</div>
+    
+
+  <!-- Work Experience Section -->
+    <div id="work">
+        <h2>Work Experience</h2>
+
+        <table class="work-experience">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+    
+            <tbody id="work-experience">
+                <!-- Table rows will be dynamically generated here -->
+              </tbody>
+    
+            
+          </table>
     </div>
 
-	</main>
+    
+<!-- Skills Section -->
+    <div class="skills-section" id="skills">
+        <div class="skills-header">
+            <h1>Coding Languages</h1>
+        </div>
+        <div class="skills-container">
 
-	<footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h3>About Me</h3>
-          <p>Computer Science</p>
+
+            <div class="skills-box">
+                <div class="skills-title">
+                    <div class="skills-img">
+                        <img src="https://cdn.freebiesupply.com/logos/large/2x/html-5-logo-png-transparent.png" alt=""
+                            class="skills-icons">
+                    </div>
+                    <h3>HTML 5</h3>
+                </div>
+            </div>
+
+
+            <div class="skills-box">
+                <div class="skills-title">
+                    <div class="skills-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/CSS.3.svg" alt=""
+                            class="skills-icons">
+                    </div>
+                    <h3>CSS3</h3>
+                </div>
+            </div>
+
+            <div class="skills-box">
+                <div class="skills-title">
+                    <div class="skills-img">
+                        <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Java-Light.svg"
+                            alt="" class="skills-icons">
+                    </div>
+                    <h3>JAVA</h3>
+                </div>
+            </div>
+
+
+            <div class="skills-box">
+                <div class="skills-title">
+                    <div class="skills-img">
+                        <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/JavaScript.svg"
+                            alt="" class="skills-icons">
+                    </div>
+                    <h3>JAVASCRIPT</h3>
+                </div>
+            </div>
+
+
+            <div class="skills-box">
+                <div class="skills-title">
+                    <div class="skills-img">
+                        <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Python-Dark.svg"
+                            alt="" class="skills-icons">
+                    </div>
+                    <h3>PYTHON</h3>
+                </div>
+            </div>
+
         </div>
 
-        <div class="col-md-4">
-          <h3>Contact Me</h3>
-          <ul>
-            <li><i class="fa fa-phone"></i> 27893425</li>
-            <li><i class="fa fa-envelope"></i> arenstorffenterprise@gmail.com</li>
-            <li><i class="fa fa-map-marker"></i> Copenhagen, Denmark</li>
-          </ul>
+        <div class="skills-section">
+            <div class="skills-header">
+                <h1>Frameworks</h1>
+            </div>
+            <div class="skills-container">
+
+
+                <div class="skills-box">
+                    <div class="skills-title">
+                        <div class="skills-img">
+                            <img src="https://mildaintrainings.com/wp-content/uploads/2017/11/react-logo.png" alt=""
+                                class="skills-icons">
+                        </div>
+                        <h3>REACT</h3>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-title">
+                        <div class="skills-img">
+                            <img src="https://cdn-icons-png.flaticon.com/512/5065/5065388.png" alt=""
+                                class="skills-icons">
+                        </div>
+                        <h3>SCRUM</h3>
+                    </div>
+                </div>
+
+                <div class="skills-box">
+                    <div class="skills-title">
+                        <div class="skills-img">
+                            <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Spring-Light.svg"
+                                alt="" class="skills-icons">
+                        </div>
+                        <h3>SPRING</h3>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="skills-section">
+                <div class="skills-header">
+                    <h1>Editors</h1>
+                </div>
+                <div class="skills-container">
+
+
+                    <div class="skills-box">
+                        <div class="skills-title">
+                            <div class="skills-img">
+                                <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Idea-Light.svg"
+                                    alt="" class="skills-icons">
+                            </div>
+                            <h3>INTELLIJ</h3>
+                        </div>
+                    </div>
+
+
+
+                    <div class="skills-box">
+                        <div class="skills-title">
+                            <div class="skills-img">
+                                <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/VisualStudio-Dark.svg"
+                                    alt="" class="skills-icons">
+                            </div>
+                            <h3>VSCODE</h3>
+                        </div>
+                    </div>
+
+                    <div class="skills-box">
+                        <div class="skills-title">
+                            <div class="skills-img">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS89cxDpaKbI-Ctuu2ZzkomimlKx10nLzd6bc0zII3qaA&s"
+                                    alt="" class="skills-icons">
+                            </div>
+                            <h3>PyCharm</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            
+            <div class="skills-section">
+                <div class="skills-header">
+                    <h1>Other Skills</h1>
+                </div>
+
+                <div class="skills-last-extra-width">
+                <div class="skills-container">
+                    <div class="skills-box">
+                        <div class="skills-title">
+                            <div class="skills-img">
+                                <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Github-Light.svg"
+                                    alt="" class="skills-icons">
+                            </div>
+                            <h3>GITHUB</h3>
+                        </div>
+                    </div>
+
+
+                    <div class="skills-box">
+                        <div class="skills-title">
+                            <div class="skills-img">
+                                <img src="http://pluspng.com/img-png/nodejs-logo-png-nice-images-collection-node-js-desktop-wallpapers-370.png"
+                                    alt="" class="skills-icons">
+                            </div>
+                            <h3>NODE.JS</h3>
+                        </div>
+                    </div>
+
+
+
+                    <div class="skills-box">
+                        <div class="skills-title">
+                            <div class="skills-img">
+                                <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/MySQL-Dark.svg"
+                                    alt="" class="skills-icons">
+                            </div>
+                            <h3>MYSQL</h3>
+                        </div>
+                    </div>
+
+                    <!-- Look at the class names of the next two div, it is the same as the first ones -->
+
+                    <div class="skills-box">
+                        <div class="skills-title">
+                            <div class="skills-img">
+                                <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Postman.svg"
+                                    alt="" class="skills-icons">
+                            </div>
+                            <h3>POSTMAN</h3>
+                        </div>
+                    </div>
+
+                    <div class="skills-box-other-skills">
+                        <div class="skills-title">
+                            <div class="skills-img">
+                                <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Azure-Light.svg" alt="" class="skills-icons">
+                            </div>
+                            <h3>AZURE</h3>
+                        </div>
+                    </div>
+
+                    <div class="skills-box-other-skills">
+                        <div class="skills-title">
+                            <div class="skills-img">
+                                <img src="https://raw.githubusercontent.com/tandpfun/skill-icons/59059d9d1a2c092696dc66e00931cc1181a4ce1f/icons/Powershell-Dark.svg" alt="" class="skills-icons">
+                            </div>
+                            <h3>POWERSHELL</h3>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="col-md-4">
-          <h3>Follow Me</h3>
-          <ul class="fa">
-            <li><a href="https://www.linkedin.com/in/youssef-arenstorff-a0985a220/"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
-          </ul>
-        </div>
-      </div>
+    <h2 class="w3-padding-16" id="otherSkills">Skills Acquired Through Work</h2>
+
+    <p class="w3-wide">Hosting Large Events</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:100%">100%</div>
+    </div><br>
+
+    <p class="w3-wide">Communication</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:100%">100%</div>
     </div>
-  </footer>
+
+    <p class="w3-wide">Logistics</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:100%">100%</div>
+    </div>
+
+    <p class="w3-wide">Teaching</p>
+    <div class="w3-light-grey">
+      <div class="w3-container w3-center w3-padding-small w3-dark-grey" style="width:85%">85%</div>
+    </div><br>
+    
+   
+  <!-- End About Section -->
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-padding-32 w3-content" id="contact" style="margin-bottom:64px">
+    <h2>Contact Me</h2>
+    <hr class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Copenhagen, Denmark</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +45 27893425</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: arenstorffenterprise@gmail.com</p>
+    </div>
+    
+   
+   
+    <!-- Image of location/map -->
+    
+   
+    <p>Lets get in touch. Send me a message:</p>
+    <form action="/sendEmail" method="POST">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message"></p>
+      <p>
+        <button class="button-send-message" type="submit">
+          <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        </button>
+      </p>
+    </form>
+  <!-- End Contact Section -->
+  </div>  
   
+  <!-- Footer -->
+  <footer>
+   
+        <a href="https://www.linkedin.com/in/youssef-arenstorff-a0985a220/"> <i class="fa fa-linkedin"></i> </a>
+      
+
+  </footer>
+ 
+  
+  
+<!-- END PAGE CONTENT -->
+</div>
+
+<script>
+// Open and close sidebar
+function openNav() {
+  document.getElementById("mySidebar").style.width = "65%";
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+function openPDF(filePath) {
+  window.open(filePath, '_blank');
+}
+
+</script>
+
+<script src="/assets/js/skills.js"></script>
+<script src="/assets/pdf/file.js" defer></script>
+<script src="/public/index.js"></script>
+
+
 </body>
 </html>
+

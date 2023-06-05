@@ -1,179 +1,76 @@
-* {
-  box-sizing: border-box;
+body, h1,h2,h3,h4,h5,h6 {
+    font-family: "Montserrat", sans-serif;
+    background-color: white;
+  }
+
+  h3 {
+    font-size: 17px;
+  }
+  
+  .w3-row-padding img {
+    margin-bottom: 12px;
+  }
+  
+  .bgimg .container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+  }
+
+  .navbar {
+    position: relative;
+    z-index: 999;
+  }
+
+  
+/* CSS for Downloand resume button*/
+
+.secret-login a {
+	font-size: 3px;
 }
 
-body {
-  background-color: bisque;
-  font-family: Arial, sans-serif;
-  margin: 0;
+.button-download-resume{
+    background-color: white; /* Change the background color */
+    border: none; /* Remove the border */
+    cursor: pointer; /* Change the mouse cursor to pointer */
 }
 
-header {
-  margin-top: 35px;
-  margin-bottom: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.button-download-resume:hover {
+    background-color: #f1f1f1; /* Change the background color on hover */
+} 
+
+ 
+/* CSS for Send message button*/
+
+.button-send-message{
+    background-color: white; /* Change the background color */
+    border: none; /* Remove the border */
+    cursor: pointer; /* Change the mouse cursor to pointer */
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
+.button-send-message:hover {
+    background-color: #f1f1f1; /* Change the background color on hover */
 }
 
-nav ul {
-  color: black;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav ul li {
-  margin-right: 20px;
-}
-
-nav ul li a {
-  color: black;
-  text-decoration: none;
-}
-
-nav ul li a:hover {
-  text-decoration: underline;
-}
-
-/*Dropdown navbar*/
-
-nav li.dropdown ul {
-  background-color: bisque;
-  display: none;
-  position: absolute;
-  padding: 2px;
-  z-index: 3;
-}
-
-nav li.dropdown:hover ul {
-  display: block;
-}
-
-nav li.dropdown ul li {
-  margin-top: 4px;
-}
-
-nav li.dropdown ul li a {
-  display: block;
-  color: #333;
-  text-decoration: none;
-}
-
-nav li.dropdown ul li:hover a {
-  text-decoration: underline;
-}
-
-/*Frontpage Portrait Image*/
-
-.portrait {
-  display: flex;
-  align-items: center;
-}
-
-.portrait img{
-  border-radius: 10%;
-  margin-bottom: 10%;
-  margin-left: 16%;
-  margin-top: 5%;
-  height: 100%;
-  width: 22%;
-}
-
-.portrait .frontpage-text{
-  flex: 1; 
-  margin-left: 5%;
-}
-
-.portrait h1{
-  font-size: 2em; 
-  margin: 0;
-}
-
-.portrait p{
-  margin-top: 0.5em; 
-}
-
-/*The Footer*/
-
-footer {
-  background-color: bisque;
-  color: #333;
-  padding: 10px 0;
-  font-size: 16px;
-}
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-
-/*The Text In The Footer*/
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.container h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.container ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.container li {
-  margin-bottom: 1px;
-  display: flex;
-  align-items: center;
-}
-
-.container i {
-  font-size: 20px;
-  margin-right: 10px;
-}
-
-.container a {
-  color: #333;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-
-.container a:hover {
-  text-decoration: underline;
-}
-
-/*Linkedin icon*/
+/* CSS for Footer Icons*/
 
 .fa {
-  border-radius: 32%;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-}
+    border-radius: 32%;
+      padding: 10px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 2px;
+  }
+  
+  .fa:hover {
+      opacity: 0.7;
+  }
+  
+  .fa-linkedin {
+    background: #007bb5;
+    margin-left: 50%;
+    color: white;
+  }
 
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-linkedin {
-  background: #007bb5;
-  color: white;
-}
+ 

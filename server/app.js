@@ -6,6 +6,7 @@ import { Server } from 'socket.io';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import cors from 'cors';
+import nodemailer from 'nodemailer';
 
 dotenv.config();
 
@@ -59,18 +60,48 @@ app.get('/api/skills', (req, res) => {
   });
 });
 
+// Handle sending email
+app.use(express.urlencoded({ extended: true }));
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
+
+app.post('/sendEmail', (req, res) => {
+  const { Name, Email, Subject, Message } = req.body;
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'arenstorffenterprise@gmail.com',
+      pass: ''
+    },
+    tls: {
+      rejectUnauthorized: false
+    }
+  });
+
+  const mailOptions = {
+    from: 'your-email@gmail.com',
+    to: 'recipient-email@example.com',
+    subject: Subject,
+    text: `Name: ${Name}\nEmail: ${Email}\nMessage: ${Message}`
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log('Error:', error);
+      res.send('Error');
+    } else {
+      console.log('Email sent:', info.response);
+      res.send('Email sent successfully');
+    }
+  });
+});
+
 // Socket.IO connection logic
 io.on('connection', (socket) => {
   console.log('A user connected');
-
-  // Handle socket events here
-  // For example, emit a 'chatMessage' event to the frontend
-  socket.emit('chatMessage', 'Hello, client!');
-
-  // Listen for a 'chatMessage' event from the frontend
-  socket.on('chatMessage', (message) => {
-    console.log(`Received message from client: ${message}`);
-  });
 
   // Handle disconnection
   socket.on('disconnect', () => {
@@ -82,6 +113,5 @@ io.on('connection', (socket) => {
 server.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
 
 
